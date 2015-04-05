@@ -1,0 +1,8 @@
+Number of rules = 3
+
+IF      X3 = { L0 L1 L2 } THEN Class IS Iris-setosa   W 1.0
+
+IF      X2 = { L0 L1 L2 L3 L4 L5 }     X3 = { L0 L1 L2 L3 L4 L5 } THEN Class IS Iris-versicolor   W 0.48495349261353277
+
+IF  THEN Class IS Iris-virginica   W 0.33884297520661155
+
