@@ -6,7 +6,7 @@ function partition = equalWidthPartition(numGroups, data)
     for i=1:numGroups-1
         interval = [interval,m+(i*width)];
     end
-    interval = [interval,max(data)]
+    interval = [interval,max(data)];
    
     partition = [];
     for i=1:length(data)
@@ -17,7 +17,7 @@ function partition = equalWidthPartition(numGroups, data)
             end
 
             if (data(i)>= interval(in) && data(i)<=interval(in+1))
-                partition = [partition,bin];
+                partition = [partition;bin];
                 break;
             end
             bin = bin+1;
