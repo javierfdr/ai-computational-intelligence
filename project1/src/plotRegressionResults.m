@@ -1,4 +1,4 @@
-function plotRegressionResults(prediction, real)
+function plotRegressionResults(prediction, real,filename)
 
     tolerance = [0.25,0.5,1,1.5];
     madAccuracyArray = [];
@@ -23,4 +23,5 @@ function plotRegressionResults(prediction, real)
     xlabel('Tolerance value');
     ylabel('Accuracy');
 
+    saveas(f, strcat('../generated_images/',filename),'png');
 end
