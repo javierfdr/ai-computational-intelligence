@@ -52,7 +52,8 @@ function processkeelrslt(filename)
     y = [y, acc(i,results[:,1],results[:,2])]
   end
 
-  plot(x,y, color="red", linewidth=2.0)
+  #plot(x,y, color="red", linewidth=2.0)
+  writecsv("$filename.csv", results)
 
   return stats
 end
@@ -68,8 +69,8 @@ function getstats(exps)
 
   println("Stats for $figtitle  $figtype ")
 
-  figure()
-  title("$figtitle $figtype")
+  #figure()
+  #title("$figtitle $figtype")
   for e in exps
     stats = processkeelrslt(e)
     cumstats += stats
