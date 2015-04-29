@@ -1,0 +1,41 @@
+#!/tools/bin/perl
+#
+# Lutz Prechelt, 94/02/28
+#
+# Encodes 'horse' raw data file into a training file.
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split;
+
+  #1. age  INTEGER (2), no missing values  --> VARLING ?
+  $v = $F[1]; 
+  if ($v eq "1") { printf ("%3d ", 2); } # Adult
+  else           { printf ("%3d ", 1); } # Young
+
+  #2. rectal temperature  REAL
+  $v = $F[3];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else { printf ("%7.3f ", $v); }
+ 
+  #3. pulse  INTEGER 
+  $v = $F[4];  
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else { printf ("%3d ", $v-29); }
+
+  #4. respiratory rate  INTEGER 
+  $v = $F[5]; 
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else { printf ("%3d ", $v-7); }
+
+  #OUTPUT: what happened to the horse
+  $v = $F[22];  
+  printf ("%3d\n", $v);
+}

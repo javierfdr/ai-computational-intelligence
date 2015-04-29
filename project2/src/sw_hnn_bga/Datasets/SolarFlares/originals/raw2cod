@@ -1,0 +1,62 @@
+#!/tools/bin/perl
+#
+# Lutz Prechelt, 94/02/16
+#
+# Encodes 'flare' raw data file into a training file.
+#
+# usage: raw2cod inputfile >outputfile
+
+
+while (<>) {
+  @F = split;
+
+  $v = $F[0];
+  $i = index ("ABCDEFH", $v);
+  $vals[$i] = 1;
+  printf ("%s ", join (" ", @vals[0..6]));
+  $vals[$i] = 0;
+
+  $v = $F[1];
+  $i = index ("XRSAHK", $v);
+  $vals[$i] = 1;
+  printf ("%s ", join (" ", @vals[0..5]));
+  $vals[$i] = 0;
+
+  $v = $F[2];
+  $i = index ("XOIC", $v);
+  $vals[$i] = 1;
+  printf ("%s ", join (" ", @vals[0..3]));
+  $vals[$i] = 0;
+
+  $v = $F[3];
+  printf ("%d ", $v-1);
+
+  $v = $F[4];
+  printf ("%d ", ($v-1));
+
+  $v = $F[5];
+  printf ("%d ", ($v-1));
+
+  $v = $F[6];
+  printf ("%d ", $v-1);
+
+  $v = $F[7];
+  printf ("%d ", $v-1);
+
+  $v = $F[8];
+  printf ("%d ", $v-1);
+
+ # This attribute is constant: removed
+ # $v = $F[9];
+ # printf ("%d ", $v-1);
+
+  # sortides
+  $v = $F[10];
+  $v = $F[11];
+  $v = $F[12];
+
+  if ($v eq "0 0 0") { printf ("0 1\n"); }
+  { printf ("1 0\n"); }
+
+}
+

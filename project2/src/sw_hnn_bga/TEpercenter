@@ -1,0 +1,16 @@
+#!/usr/local/bin/perl
+
+$cn=0;
+
+while (<>){
+
+($hits)=/Mean Accuracy in TE is (\d*.\d*)\n/;
+
+$cn = $cn +1;
+print "$hits\n";
+}
+
+
+#print "$cn lines processed.\n";
+
+

@@ -1,0 +1,16 @@
+Prostate data info
+
+Predictors (columns 1--8)
+
+lcavol
+lweight
+age
+lbph
+svi
+lcp
+gleason
+pgg45
+
+outcome (column 9)
+
+lpsa

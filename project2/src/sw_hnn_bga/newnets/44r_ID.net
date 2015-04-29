@@ -1,0 +1,13 @@
+; Esta es una red de una capa hidden (44)
+
+44 ; no. neuronas hidden totales
+1 ; no. capas hidden
+
+NORMAL
+RBF-ESTANDAR
+GAUSSIANA
+44
+
+NORMAL
+PROD-ESCALAR
+IDENTITY

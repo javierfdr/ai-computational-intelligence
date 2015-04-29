@@ -1,0 +1,13 @@
+; Esta es una red de una capa hidden (1)
+
+1 ; no. neuronas hidden totales
+1 ; no. capas hidden
+
+NORMAL
+PROD-ESCALAR
+LOGISTIC
+1
+
+NORMAL
+PROD-ESCALAR
+IDENTITY

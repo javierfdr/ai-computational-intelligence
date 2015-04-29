@@ -1,0 +1,98 @@
+#!/tools/bin/perl -s
+#
+# Lutz Prechelt, 94/02/14
+#
+# Encodes 'heart' raw data file into a training file.
+#
+# usage: raw2cod [-classifier] inputfile >outputfile
+
+while (<>) {
+  @F = split (',');
+
+  $v = $F[0];
+  printf ("%7.3f ", $v);
+
+  printf ("%s ", $F[1] == 1 ? "1" : "0");
+
+  $v = $F[2];
+  printf ("1 0 0 0 ") if ($v == 1);
+  printf ("0 1 0 0 ") if ($v == 2);
+  printf ("0 0 1 0 ") if ($v == 3);
+  printf ("0 0 0 1 ") if ($v == 4);
+#  printf ("0 0 0 0 1 ") if ($v eq "?" || $v == 0);
+
+  $v = $F[3];
+  if ($v eq "?" || $v == 0) {
+    printf ("0 1 ");
+  }
+  else {
+    $v = $F[3];
+    printf ("%7.3f 0 ", $v);
+  }
+
+  $v = $F[4];
+  if ($v eq "?" || $v == 0) {
+    printf ("0 1 ");
+  }
+  else {
+    printf ("%7.3f 0 ", $v);
+  }
+
+  $v = $F[5];
+  printf ("1 0 0 ") if ($v ne "?" && $v == 0);
+  printf ("0 1 0 ") if ($v == 1);
+  printf ("0 0 1 ") if ($v eq "?");
+
+  $v = $F[6];
+  printf ("1 0 0 0 ") if ($v ne "?" && $v == 0);
+  printf ("0 1 0 0 ") if ($v == 1);
+  printf ("0 0 1 0 ") if ($v == 2);
+  printf ("0 0 0 1 ") if ($v eq "?");
+
+  $v = $F[7];
+  if ($v eq "?" || $v == 0) {
+    printf ("0 1 ");
+  }
+  else {
+    printf ("%7.3f 0 ", $v);
+  }
+
+  $v = $F[8];
+  printf ("1 0 0 ") if ($v ne "?" && $v == 0);
+  printf ("0 1 0 ") if ($v == 1);
+  printf ("0 0 1 ") if ($v eq "?");
+
+  $v = $F[9];
+  if ($v eq "?") {
+    printf ("0 1 ");
+  }
+  else {
+    printf ("%7.3f 0 ", $v);
+  }
+
+  $v = $F[10];
+  printf ("0.0 0 ") if ($v == 3);
+  printf ("0.5 0 ") if ($v == 2);
+  printf ("1.0 0 ") if ($v == 1);
+  printf ("0.0 1 ") if ($v eq "?" || $v == 0);
+
+  $v = $F[11];
+  if ($v eq "?") {
+    printf ("0 1 ");
+  }
+  else {
+    printf ("%7.3f 0 ", $v);
+  }
+
+  $v = $F[12];
+  printf ("1 0 0 0 ") if ($v == 3);
+  printf ("0 1 0 0 ") if ($v == 6);
+  printf ("0 0 1 0 ") if ($v == 7);
+  printf ("0 0 0 1 ") if ($v eq "?" || $v == 0);
+
+  #OUTPUT encode only ill/non-ill as 1-of-2 value:
+  $v = $F[13];
+  printf ("%s\n", $v == 0 ? "1 0" : "0 1");
+
+}
+

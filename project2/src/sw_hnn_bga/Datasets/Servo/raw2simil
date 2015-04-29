@@ -1,0 +1,36 @@
+#!/tools/bin/perl
+#
+# Lutz Prechelt, 94/02/28
+#
+# Encodes 'servo' raw data file into a training file.
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split(',');
+
+  $v = $F[0];  #motor: NOMINAL
+  printf ("%s ", $v eq "A" ? "1" :
+	        $v eq "B" ? "2" :
+	        $v eq "C" ? "3" :
+                $v eq "D" ? "4" :
+                $v eq "E" ? "5" :
+                 "##########");
+
+  $v = $F[1];  #screw: NOMINAL
+  printf ("%s ", $v eq "A" ? "1" :
+	        $v eq "B" ? "2" :
+	        $v eq "C" ? "3" :
+                $v eq "D" ? "4" :
+                $v eq "E" ? "5" :
+                 "##########");
+
+  $v = $F[2];  #pgain: INTEGER
+  printf ("%d ", $v-2);
+
+  $v = $F[3];  #vgain: INTEGER
+  printf ("%d ", $v);
+
+  $v = $F[4];  #OUTPUT
+  printf ("%7.3f\n", $v);
+}

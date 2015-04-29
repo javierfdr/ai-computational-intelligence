@@ -1,0 +1,57 @@
+Configuración leída OK
+Loading /home/belanche/WORK-UPC/Software/HNN-1-BGA/NUEVOARRANQUE/Datasets/PimaDiabetes/PimaDiabetes_n.in ... OK
+Datos leídos OK
+Ndades: 768
+NInputs: 13
+NOutputs: 2
+
+LMode: CLASSIF  268 (34.896%)  500 (65.104%)
+Missing: 0 de 9984 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.         REAL     0    0.000    3.904   -1.141   0.000    1.000
+   2.         REAL     0    0.000    2.443   -3.781   0.000    1.000
+   3.         REAL     0    0.000   12.345   -0.081   0.000    1.000
+   4.         REAL     0    0.000    2.733   -3.570   0.000    1.000
+   5.         REAL     0    0.000    4.573   -0.218   0.000    1.000
+   6.         REAL     0    0.000    4.919   -1.287   0.000    1.000
+   7.         REAL     0    0.000    1.543   -0.647   0.000    1.000
+   8.         REAL     0    0.000    6.649   -0.692   0.000    1.000
+   9.         REAL     0    0.000    1.026   -0.974   0.000    1.000
+  10.         REAL     0    0.000    4.453   -4.058   0.000    1.000
+  11.         REAL     0    0.000    8.290   -0.120   0.000    1.000
+  12.         REAL     0    0.000    5.880   -1.189   0.000    1.000
+  13.         REAL     0    0.000    4.061   -1.041   0.000    1.000
+Red leída OK
+Creando BGA de 60 individuos
+Problema: ErrorRed
+No. variables: 98
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.169843 (Mean) 0.18221 (Variance) 0.000119677
+NMSE (Best) 1.85779e-09 (Mean) 1.99307e-09 (Variance) 1.43189e-20
+---> Mean Accuracy 82.891% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.228195 (Mean) 0.281614 (Variance) 0.00097786
+NMSE (Best) 2.49606e-09 (Mean) 3.08038e-09 (Variance) 1.16997e-19
+---> Mean Accuracy 73.229% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.247127 (Mean) 0.283116 (Variance) 0.000543545
+NMSE (Best) 2.70314e-09 (Mean) 3.0968e-09 (Variance) 6.50329e-20
+---> Mean Accuracy 73.750% <---
+NMSE at min VA 2.70314e-09 (76.042%) (run 1)
+
+Mean Accuracy in TE is 73.75

@@ -1,0 +1,76 @@
+#!/tools/bin/perl
+#
+# Lutz Prechelt, 94/02/16
+#
+# Encodes 'flare' raw data file into a training file.
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split;
+
+  #1. NOMINAL (7)
+  $v = $F[0];
+  printf ("%3d ", "1 ") if ($v eq "A");
+  printf ("%3d ", "2 ") if ($v eq "B");
+  printf ("%3d ", "3 ") if ($v eq "C");
+  printf ("%3d ", "4 ") if ($v eq "D");
+  printf ("%3d ", "5 ") if ($v eq "E");
+  printf ("%3d ", "6 ") if ($v eq "F");
+  printf ("%3d ", "7 ") if ($v eq "H");
+
+  #2. NOMINAL (6)
+  $v = $F[1];
+  printf ("%3d ", "1 ") if ($v eq "X");
+  printf ("%3d ", "2 ") if ($v eq "R");
+  printf ("%3d ", "3 ") if ($v eq "S");
+  printf ("%3d ", "4 ") if ($v eq "A");
+  printf ("%3d ", "5 ") if ($v eq "H");
+  printf ("%3d ", "6 ") if ($v eq "K");
+
+  #3. NOMINAL (4)
+  $v = $F[2];
+  printf ("%3d ", "1 ") if ($v eq "X");
+  printf ("%3d ", "2 ") if ($v eq "O");
+  printf ("%3d ", "3 ") if ($v eq "I");
+  printf ("%3d ", "4 ") if ($v eq "C");
+
+  #4. NOMINAL (2)
+  $v = $F[3]; 
+  printf ("%3d ", $v); 
+
+  #5. ORDINAL
+  $v = $F[4]; 
+  printf ("%3d ", $v); 
+
+  #6. ORDINAL
+  $v = $F[5]; 
+  printf ("%3d ", $v); 
+
+  #7. BINARY
+  $v = $F[6];
+  printf ("%3d ", $v);
+
+  #8. BINARY
+  $v = $F[7];
+  printf ("%3d ", $v);
+
+  #9. ORDINAL
+  $v = $F[8]; 
+  printf ("%3d ", $v); 
+
+  # This attribute is constant: removed
+  #10. INTEGER (2)
+  #$v = $F[9]; 
+  #printf ("%3d ", $v); 
+
+  # sortides
+  $v = $F[10];
+  $v = $F[11];
+  $v = $F[12];
+
+  if ($v eq "0 0 0") { printf ("0 1\n"); }
+  { printf ("1 0\n"); }
+
+}
+

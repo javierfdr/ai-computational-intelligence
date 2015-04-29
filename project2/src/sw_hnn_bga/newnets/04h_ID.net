@@ -1,0 +1,13 @@
+; Esta es una red de una capa hidden (4)
+
+4 ; no. neuronas hidden totales
+1 ; no. capas hidden
+
+HETEROGENEA
+SIMIL-ARIT-MEAN
+LOGISTIC-JULIO
+4
+
+NORMAL
+PROD-ESCALAR
+IDENTITY

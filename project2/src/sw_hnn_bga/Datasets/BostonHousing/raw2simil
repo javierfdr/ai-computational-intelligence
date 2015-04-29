@@ -1,0 +1,56 @@
+#!/tools/bin/perl
+#
+# Problem: Annealing
+# Encodes raw data file into a training file for normal networks
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split; 
+
+  $v = $F[0];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[1];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[2];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[3];  #CHAS BINARY
+  printf ("%s ", 
+	  $v eq "0" ? "1" :
+	  $v eq "1" ? "2" :
+	  "##########");
+
+  $v = $F[4];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[5];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[6];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[7];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[8];  #RAD INTEGER
+  printf ("%d ", $v);
+
+  $v = $F[9];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[10];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[11];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[12];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[13];  # OUTPUT
+  printf ("%7.3f\n", $v);
+
+}

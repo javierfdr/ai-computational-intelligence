@@ -1,0 +1,57 @@
+Configuración leída OK
+Loading /home/belanche/WORK-UPC/Software/HNN-1-BGA/NUEVOARRANQUE/Datasets/PimaDiabetes/PimaDiabetes_n.in ... OK
+Datos leídos OK
+Ndades: 768
+NInputs: 13
+NOutputs: 2
+
+LMode: CLASSIF  268 (34.896%)  500 (65.104%)
+Missing: 0 de 9984 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.         REAL     0    0.000    3.904   -1.141   0.000    1.000
+   2.         REAL     0    0.000    2.443   -3.781   0.000    1.000
+   3.         REAL     0    0.000   12.345   -0.081   0.000    1.000
+   4.         REAL     0    0.000    2.733   -3.570   0.000    1.000
+   5.         REAL     0    0.000    4.573   -0.218   0.000    1.000
+   6.         REAL     0    0.000    4.919   -1.287   0.000    1.000
+   7.         REAL     0    0.000    1.543   -0.647   0.000    1.000
+   8.         REAL     0    0.000    6.649   -0.692   0.000    1.000
+   9.         REAL     0    0.000    1.026   -0.974   0.000    1.000
+  10.         REAL     0    0.000    4.453   -4.058   0.000    1.000
+  11.         REAL     0    0.000    8.290   -0.120   0.000    1.000
+  12.         REAL     0    0.000    5.880   -1.189   0.000    1.000
+  13.         REAL     0    0.000    4.061   -1.041   0.000    1.000
+Red leída OK
+Creando BGA de 60 individuos
+Problema: ErrorRed
+No. variables: 114
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.169715 (Mean) 0.180035 (Variance) 4.43855e-05
+NMSE (Best) 1.85639e-09 (Mean) 1.96927e-09 (Variance) 5.31054e-21
+---> Mean Accuracy 83.255% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.27902 (Mean) 0.344138 (Variance) 0.00684989
+NMSE (Best) 3.052e-09 (Mean) 3.76428e-09 (Variance) 8.19561e-19
+---> Mean Accuracy 70.990% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.279849 (Mean) 0.364548 (Variance) 0.0151043
+NMSE (Best) 3.06106e-09 (Mean) 3.98752e-09 (Variance) 1.80716e-18
+---> Mean Accuracy 72.760% <---
+NMSE at min VA 3.06106e-09 (75.000%) (run 3)
+
+Mean Accuracy in TE is 72.7604

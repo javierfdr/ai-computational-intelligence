@@ -1,0 +1,2 @@
+- No entiendo pq hay todavía NA en la salida
+- Me lo dejo para cuando el software sea más rápido (hay 9,000 ejemplos)

@@ -1,0 +1,479 @@
+#!/tools/bin/perl
+#
+# Problem: Audiology
+# Encodes raw data file into a training file for normal networks
+#
+# usage: raw2cod inputfile >outputfile
+
+# OJO: falta ver qué variables tienen X: las que salgan con ##########
+
+while (<>) {
+  @F = split(',');
+
+  $v = $F[0];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[1];  #ORDINAL
+  printf ("%s ", 
+	  $v eq "mild"     ? "0.00":
+	  $v eq "moderate" ? "0.25":
+	  $v eq "normal"   ? "0.50":
+	  $v eq "severe"   ? "0.75":
+	  $v eq "profound" ? "1.00":
+	  "##########");
+
+  $v = $F[2];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[3];  #ORDINAL
+  printf ("%s ", 
+	  $v eq "absent"  ? "0.00 0":
+	  $v eq "normal"  ? "0.50 0":
+	  $v eq "elevated"? "1.00 0":
+	  $v eq "?"       ? "0.00 1":
+	  "##########");
+
+  $v = $F[4];  #ORDINAL
+  printf ("%s ", 
+	  $v eq "absent"  ? "0.00 0":
+	  $v eq "normal"  ? "0.50 0":
+	  $v eq "elevated"? "1.00 0":
+	  $v eq "?"       ? "0.00 1":
+	  "##########");
+
+  $v = $F[5];  #ORDINAL: OJO. unmeasured es missing y así lo trato
+  printf ("%s ", 
+	  $v eq "mild"       ? "0.00 0":
+	  $v eq "moderate"   ? "0.50 0":
+	  $v eq "normal"     ? "1.00 0":
+	  $v eq "?"          ? "0.00 1":
+	  $v eq "unmeasured" ? "0.00 1":
+	  "##########");
+
+  $v = $F[6];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[7];  #NOMINAL
+  printf ("%s ", 
+	  $v eq "normal"   ? "1 0 0" :
+	  $v eq "degraded" ? "0 1 0" :
+	  $v eq "?"        ? "0 0 1":
+	  "##########");
+
+  $v = $F[8];  #history_buzzing BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[9];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[10];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[11];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[12];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[13];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[14];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[15];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[16];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[17];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[18];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[19];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[20];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[21];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[22];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[23];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[24];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[25];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[26];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[27];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[28];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[29];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[30];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[31];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[32];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[33];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[34];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[35];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[36];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[37];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[38];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[39];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[40];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[41];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[42];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[43];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[44];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[45];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[46];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[47];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[48];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[49];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[50];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[51];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[52];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[53];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[54];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[55];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[56];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####1####");
+
+  $v = $F[57];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####2####");
+
+  $v = $F[58];  #o_ar_c() ORDINAL
+  printf ("%s ", 
+	  $v eq "absent"  ? "0.00 0":
+	  $v eq "normal"  ? "0.50 0":
+	  $v eq "elevated"? "1.00 0":
+	  $v eq "?" ?       "0 1":
+	  "#####3####");
+
+  $v = $F[59];  #o_ar_u() ORDINAL
+  printf ("%s ", 
+	  $v eq "absent"  ? "0.00 0":
+	  $v eq "normal"  ? "0.50 0":
+	  $v eq "elevated"? "1.00 0":
+	  $v eq "?" ?       "0 1":
+	  "#####4####");
+
+  $v = $F[60];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####5####");
+
+  $v = $F[61];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####6####");
+
+  $v = $F[62];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####7####");
+
+  $v = $F[63];  #speech() ORDINAL
+  printf ("%s ", 
+	  $v eq "very_poor" ? "0.00 0":
+	  $v eq "poor"      ? "0.25 0":
+	  $v eq "normal"    ? "0.50 0":
+	  $v eq "good"      ? "0.75 0":
+	  $v eq "very_good" ? "1.00 0":
+	  $v eq "?"         ? "0.00 1":
+	  "#####8####");
+
+  $v = $F[64];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "#####9####");
+
+  $v = $F[65];  #NOMINAL
+	  printf ("%s ", 
+	  $v eq "a"  ? "1 0 0 0 0":
+	  $v eq "as" ? "0 1 0 0 0":
+	  $v eq "b"  ? "0 0 1 0 0":
+	  $v eq "ad" ? "0 0 0 1 0":
+	  $v eq "c"  ? "0 0 0 0 1":
+	  "##########");
+
+  $v = $F[66];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[67];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[68];  #BINARY
+  printf ("%s ", 
+	  $v eq "f" ? "0" :
+	  $v eq "t" ? "1" :
+	  "##########");
+
+  $v = $F[69];  #identifier ELIMINAT segons .names
+
+  $v = $F[70];  #OUTPUT: el recodifiquem de 24 a 4 classes
+  printf ("%s\n", 
+	  $v eq "cochlear_age\n"                            ? "1 0 0 0":
+	  $v eq "cochlear_age_and_noise\n"                  ? "1 0 0 0":
+	  $v eq "cochlear_age_plus_poss_menieres\n"         ? "1 0 0 0":
+	  $v eq "cochlear_noise_and_heredity\n"             ? "1 0 0 0":
+	  $v eq "cochlear_poss_noise\n"                     ? "1 0 0 0":
+	  $v eq "cochlear_unknown\n"                        ? "1 0 0 0":
+	  $v eq "mixed_cochlear_age_fixation\n"             ? "0 1 0 0":
+	  $v eq "mixed_cochlear_age_otitis_media\n"         ? "0 1 0 0":
+ 	  $v eq "mixed_cochlear_age_s_om\n"                 ? "0 1 0 0":
+	  $v eq "mixed_cochlear_unk_discontinuity\n"        ? "0 1 0 0":
+	  $v eq "mixed_cochlear_unk_fixation\n"             ? "0 1 0 0":
+	  $v eq "mixed_cochlear_unk_ser_om\n"               ? "0 1 0 0":
+	  $v eq "mixed_poss_central_om\n"                   ? "0 1 0 0":
+	  $v eq "mixed_poss_noise_om\n"                     ? "0 1 0 0":
+	  $v eq "normal_ear\n"                              ? "0 0 1 0":
+	  $v eq "otitis_media\n"                            ? "0 0 0 1":
+	  $v eq "poss_central\n"                            ? "0 0 0 1":
+	  $v eq "possible_brainstem_disorder\n"             ? "0 0 0 1":
+	  $v eq "possible_menieres\n"                       ? "0 0 0 1":
+	  $v eq "retrocochlear_unknown\n"                   ? "0 0 0 1":
+	  $v eq "acoustic_neuroma\n"                        ? "0 0 0 1":
+	  $v eq "bells_palsy\n"                             ? "0 0 0 1":
+	  $v eq "conductive_discontinuity\n"                ? "0 0 0 1":
+	  $v eq "conductive_fixation\n"                     ? "0 0 0 1":
+	  "##########");
+
+}

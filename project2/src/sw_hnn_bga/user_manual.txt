@@ -1,0 +1,143 @@
+--------------------------------------------------------------------------------
+                     Heterogeneous Neural Network (HNN)
+--------------------------------------------------------------------------------
+           
+1. Necessary files
+
+In order to run the HNN you first need to determine suitable
+similarities and data types for your problem, and create the
+corresponding input files (.in). The program can train MLP, RBF and
+HNN networks. The MLP and RBF share the same input file. For example,
+for the Pima Diabetes problem, you must create:
+
+PimaDiabetes_h.in (for the HNN)
+PimaDiabetes_n.in (for the MLP and RBF)
+
+in all cases the first line is the number of examples (valid rows);
+the ';' sign acts as a comment symbol in these files.
+
+This is the list of currently available problems:
+
+Annealing    BostonHousing  FaecalSource  SAHeart
+Audiology    CreditCard     HeartDisease  PimaDiabetes  Servo
+AutoImports  CylinderBands  HorseColic    Prostate      SolarFlares
+
+All of them are classification problems, except Servo and
+BostonHousing, which are regression problems. If you want to add a new
+problem, you can adapt the corresponding 'raw2normal' and 'raw2simil'
+perl files, to convert the original 'raw' data files to the required
+'.in' files.
+
+In addition, you need to create a configuration file for each problem; for example,
+
+<file PimaDiabetes_n.cfg>
+; PimaDiabetes
+
+13    ; no. entradas
+2      ; no. salidas
+
+; tipos entradas
+REAL REAL REAL REAL REAL REAL REAL REAL REAL REAL 
+REAL REAL REAL
+
+STANDARD       ; tipo preproceso
+CLASSIF        ; tipo aprendizaje
+CROSS-ENTROPY  ; tipo errorFun 
+; Fin de fichero
+<end of file>
+
+This sets the number of inputs and the number of outputs (the number
+of inputs must match that in the corresponding PimaDiabetes.in
+file). It also sets the data types for all the inputs: in RBF and MLP
+networks, these are always REAL. STANDARD is the preprocessing
+(standardization), CLASSIF means it is a classification problem, and
+CROSS-ENTROPY is the error function, to be minimized.
+
+Here is the analog configuration file for the HNN:
+
+<file PimaDiabetes_h.cfg>
+; PimaDiabetes
+
+8     ; no. entradas
+2      ; no. salidas
+
+ ; tipos entradas
+INTEGER REAL REAL REAL
+REAL REAL REAL INTEGER
+
+PROBEN         ; tipo preproceso
+CLASSIF        ; tipo aprendizaje
+CROSS-ENTROPY  ; tipo errorFun 
+; Fin de fichero
+<end of file>
+
+I suggest not to change these basic settings.
+
+2. Running the program
+
+The program admits a lot of configuration parameters, but I developed
+some shell interfaces for easy use. The program is now configured for
+a random partition in 50% training (TR), 25% validation (VA) and 25%
+test (TE). In this TR/VA/TE partition, the algorithm can be run
+multiple times (since the BGA initialization is random, this is
+sensible) and gathers the mean and variance of the obtained errors.
+
+Execution example:
+
+* The basic file is train.sh. The only thing you may need to configure
+  are the paths:
+
+      - p_data is the path where the data is read from (.in, .cfg files)
+      - p_nets is the path where the networks are read from (.net files). You do not have to change anything here, just fix the path.
+
+This file admits a lot of flexibility in the problem's list and in the neuron number's list; it also permits to change BGA parameters.
+
+* The file HNN_train.sh is a wrapper for train.sh. I suggest to use this one. Example:
+
+> ./HNN_train.sh PimaDiabetes 5 10 SIGM Myresults &
+
+This trains the MLP, RBF and HNN in the PimaDiabetes problem. It
+trains networks from 5 to 10 neurons (both numbers included) and
+leaves the resulting files in the Myresults subdirectory. The default
+number of generations for each run is 1.000, and this is replicated
+10 times by default (you can change both within this file).
+
+Note: this command takes 1' on my laptop.
+
+When the execution is finished, there will be a directory
+Datasets/PimaDiabetes/Myresults with as many subdirectories as numbers of
+neurons (one for each network), all with a results file. This file
+contains information on the input files (for safety), on simple
+statistics of the data and the detailed runs, for TR, VA and TE.
+
+If you want to have a quick look at the results and are interested directly in the TE results, you can execute:
+
+./TErecollirCLASSIF Datasets/PimaDiabetes/Myresults
+
+This will collect all the TE results and put them in three files:
+
+TE_h.resum
+TE_n.resum
+TE_r.resum
+
+where _h stands for the HNN, _n for the MLP, and _r for the RBF networks.
+
+Here is how I generated the results reported in class:
+
+./HNN_train.sh Annealing     1 30 SIGM Resultats &
+./HNN_train.sh Audiology     1 30 SIGM Resultats &
+./HNN_train.sh BostonHousing 1 30 ID   Resultats &
+./HNN_train.sh CreditCard    1 30 SIGM Resultats &
+./HNN_train.sh HeartDisease  1 30 SIGM Resultats &
+./HNN_train.sh HorseColic    1 30 SIGM Resultats &
+./HNN_train.sh PimaDiabetes  1 30 SIGM Resultats &
+./HNN_train.sh SAHeart       1 30 SIGM Resultats &
+./HNN_train.sh Servo         1 30 ID   Resultats &
+./HNN_train.sh SolarFlares   1 30 SIGM Resultats &
+
+
+Final remark: I am supplying everything (all the files, even the source code) in order to make changes possible. For further assistance, please contact me:
+
+Lluís Belanche
+belanche@lsi.upc.edu
+

@@ -1,0 +1,121 @@
+#!/tools/bin/perl -s
+#
+# Lutz Prechelt, 94/02/14
+#
+# Encodes 'heart' raw data file into a training file.
+#
+# usage: raw2cod [-classifier] inputfile >outputfile
+
+$nr = 1;
+#Input:  attr0,attr1,attr2,attr3,....,attr12,output
+#attributes are comma-separated
+while (<>) {
+  @F = split (',');
+
+  #1. age in years                           INTEGER 
+  $v = $F[0];
+  printf ("%3d ", $v-27);
+
+  #2. sex (1 = male; 2 = female)             NOMINAL (2)
+  printf ("%s ", $F[1] == 1 ? "1" : "2");
+
+  #3. chest pain type                        NOMINAL (4)
+  $v = $F[2];
+  if ($v eq "?" || $v == 0) {
+    printf ("  X   ");
+  }
+  else {
+      printf ("%3d ", $v);
+  }
+
+  #4. resting blood pressure                 REAL
+  $v = $F[3];
+  if ($v eq "?" || $v == 0) {
+    printf ("  X   ");
+  }
+  else {
+    printf ("%7.3f ", $v);  # si ORDINAL ---> -79
+  }
+
+  #5. serum cholestoral                      REAL
+  $v = $F[4];
+  if ($v eq "?" || $v == 0) {
+    printf ("  X   ");
+  }
+  else {
+    printf ("%7.3f ", $v);  # // si ORDINAL ---> -59
+  }
+
+  #6. fasting blood sugar > 120 mg/dl  (1 = true; 2 = false)  BINARY
+  $v = $F[5];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else {
+     printf ("%s ", $v == 1 ? "1" : "2");
+  }  
+
+  #7. resting electrocardiographic results               NOMINAL (3)
+  $v = $F[6];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else {
+      printf ("%3d ", $v+1);
+  }
+
+  #8. maximum heart rate achieved                        INTEGER
+  $v = $F[7];
+  if ($v eq "?" || $v == 0) {
+    printf ("  X   ");
+  }
+  else {
+      printf ("%d ", $v-59);
+  }
+
+  #9. exercise induced angina (1 = yes; 2 = no)       BINARY
+  $v = $F[8];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else {
+     printf ("%s ", $v == 1 ? "1" : "2");
+  }  
+
+  #10. ST depression induced by exercise relative to rest  REAL
+  $v = $F[9];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else {
+    printf ("%7.3f ", $v);
+  }
+
+  #11. the slope of the peak exercise ST segment     NOMINAL
+  $v = $F[10];
+  printf ("3 ") if ($v == 1);
+  printf ("2 ") if ($v == 2);
+  printf ("1 ") if ($v == 3);
+  printf ("  X   ") if ($v eq "?" || $v == 0);
+
+  #12. number of major vessels (0-3) colored by flourosopy   INTEGER
+  $v = $F[11];
+  if ($v eq "?") {
+    printf ("  X   ");
+  }
+  else {
+      printf ("%3d ", $v+1);
+  }
+
+  #13. 3 = normal; 6 = fixed defect; 7 = reversable defect  NOMINAL (3)
+  $v = $F[12];
+  printf ("1 ") if ($v == 3);
+  printf ("2 ") if ($v == 6);
+  printf ("3 ") if ($v == 7);
+  printf ("  X   ") if ($v eq "?" || $v == 0);
+
+    # encode only ill/non-ill as 1-of-2 value:
+    $v = $F[13];
+    printf ("%s\n", $v == 0 ? "1 0" : "0 1");
+}
+

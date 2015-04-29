@@ -1,0 +1,172 @@
+#!/tools/bin/perl
+#
+# Problem: Annealing
+# Encodes raw data file into a training file for normal networks
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split(',');
+
+  $v = $F[0];  #symboling ORDINAL
+  printf ("%s ", 
+	  $v eq "-3" ? "0.000":
+	  $v eq "-2" ? "0.167":
+	  $v eq "-1" ? "0.333":
+	  $v eq "0"  ? "0.500":
+	  $v eq "1"  ? "0.667":
+	  $v eq "2"  ? "0.833":
+	  $v eq "3"  ? "1.000":
+	  "##########");
+
+  $v = $F[1];  #normalized-losses CONTINUOUS
+  if ($v eq "?") { printf ("0.0 1 "); }
+  else { printf ("%7.3f 0 ", $v); }
+
+  $v = $F[2];  #make
+  printf ("%s ", 
+	  $v eq "alfa-romero"  ? "1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "audi"         ? "0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "bmw"          ? "0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "chevrolet"    ? "0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "dodge"        ? "0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "honda"        ? "0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "isuzu"        ? "0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "jaguar"       ? "0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "mazda"        ? "0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "mercedes-benz"? "0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "mercury"      ? "0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "mitsubishi"   ? "0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0" :
+	  $v eq "nissan"       ? "0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0" :
+	  $v eq "peugot"       ? "0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0" :
+	  $v eq "plymouth"     ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0" :
+	  $v eq "porsche"      ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0" :
+	  $v eq "renault"      ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0" :
+	  $v eq "saab"         ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0" :
+	  $v eq "subaru"       ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0" :
+	  $v eq "toyota"       ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0" :
+	  $v eq "volkswagen"   ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" :
+	  $v eq "volvo"        ? "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1" :
+	  "##########");
+
+  $v = $F[3];  #fuel-type NOMINAL
+  printf ("%s ", 
+	  $v eq "diesel" ? "1 0" :
+	  $v eq "gas"    ? "0 1" :
+	  "##########");
+
+  $v = $F[4];  #aspiration NOMINAL
+  printf ("%s ", 
+	  $v eq "std" ? "1 0" :
+	  $v eq "turbo"    ? "0 1" :
+	  "##########");
+
+  $v = $F[5];  #num-of-doors NOMINAL
+  printf ("%s ", 
+	  $v eq "four"   ? "1 0 0" :
+	  $v eq "two"    ? "0 1 0" :
+	  $v eq "?"      ? "0 0 1" :
+	  "##########");
+
+  $v = $F[6];  #body-style
+  printf ("%s ", 
+	  $v eq "hardtop" ? "1 0 0 0 0":
+	  $v eq "wagon" ? "0 1 0 0 0":
+	  $v eq "sedan" ? "0 0 1 0 0":
+	  $v eq "hatchback" ? "0 0 0 1 0":
+	  $v eq "convertible" ? "0 0 0 0 1":
+	  "##########");
+
+  $v = $F[7];  #drive-wheels NOMINAL
+  printf ("%s ", 
+	  $v eq "4wd" ? "1 0 0":
+	  $v eq "fwd" ? "0 1 0":
+	  $v eq "rwd" ? "0 0 1":
+	  "##########");
+ 
+  $v = $F[8];  #engine-location NOMINAL
+  printf ("%s ", 
+	  $v eq "front" ? "1 0" :
+	  $v eq "rear"    ? "0 1" :
+	  "##########");
+
+  $v = $F[9];  #wheel-base CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[10];  #length CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[11];  #width CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[12];  #height CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[13];  #curb-weight CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[14];  #engine-type NOMINAL
+  printf ("%s ", 
+	  $v eq "dohc"  ? "1 0 0 0 0 0 0" :
+	  $v eq "dohcv" ? "0 1 0 0 0 0 0" :
+	  $v eq "l"     ? "0 0 1 0 0 0 0" :
+	  $v eq "ohc"   ? "0 0 0 1 0 0 0" :
+	  $v eq "ohcf"  ? "0 0 0 0 1 0 0" :
+	  $v eq "ohcv"  ? "0 0 0 0 0 1 0" :
+	  $v eq "rotor" ? "0 0 0 0 0 0 1" :
+	  "##########");
+
+ $v = $F[15];  #num-of-cylinders INTEGER
+  printf ("%s ", 
+	  $v eq "eight" ? "8" :
+	  $v eq "five"  ? "5" :
+	  $v eq "four"  ? "4" :
+	  $v eq "six"   ? "6" :
+	  $v eq "three" ? "3" :
+	  $v eq "twelve"? "12" :
+	  $v eq "two"   ? "2" :
+	  "##########");
+
+  $v = $F[16];  #engine-size CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[17];  #fuel-system NOMINAL
+  printf ("%s ", 
+	  $v eq "1bbl" ? "1 0 0 0 0 0 0 0" :
+	  $v eq "2bbl" ? "0 1 0 0 0 0 0 0" :
+	  $v eq "4bbl" ? "0 0 1 0 0 0 0 0" :
+	  $v eq "idi"  ? "0 0 0 1 0 0 0 0" :
+	  $v eq "mfi"  ? "0 0 0 0 1 0 0 0" :
+	  $v eq "mpfi" ? "0 0 0 0 0 1 0 0" :
+	  $v eq "spdi" ? "0 0 0 0 0 0 1 0" :
+	  $v eq "spfi" ? "0 0 0 0 0 0 0 1" :
+	  "##########");
+
+  $v = $F[18];  # CONTINUOUS
+  if ($v eq "?") { printf ("0.0 1 "); }
+  else { printf ("%7.3f 0 ", $v); }
+
+  $v = $F[19];  # CONTINUOUS
+  if ($v eq "?") { printf ("0.0 1 "); }
+  else { printf ("%7.3f 0 ", $v); }
+
+  $v = $F[20];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[21];  # CONTINUOUS
+  if ($v eq "?") { printf ("0.0 1 "); }
+  else { printf ("%7.3f 0 ", $v); }
+
+  $v = $F[22];  # CONTINUOUS
+  if ($v eq "?") { printf ("0.0 1 "); }
+  else { printf ("%7.3f 0 ", $v); }
+
+  $v = $F[23];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[24];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[25];  #OUTPUT: 
+  printf ("%7.3f\n", $v);
+}

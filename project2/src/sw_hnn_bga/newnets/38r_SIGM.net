@@ -1,0 +1,13 @@
+; Esta es una red de una capa hidden (38)
+
+38 ; no. neuronas hidden totales
+1 ; no. capas hidden
+
+NORMAL
+RBF-ESTANDAR
+GAUSSIANA
+38
+
+NORMAL
+PROD-ESCALAR
+LOGISTIC

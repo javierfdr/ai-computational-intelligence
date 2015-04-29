@@ -1,0 +1,124 @@
+#           makefile1 para HNN-1bis
+
+# g++ no da errores de referencia en linkage en hayabusa
+
+CPP=g++
+
+#      Flags para el compilador
+
+#      maxima informacion para debug
+#CFLAGS=-g3
+
+#      maxima informacion para debug con formato de salida COFF 
+#CFLAGS=-gcoff3 
+
+#      informacion para debug y permitiendo todos los warnings
+CFLAGS= -O3 -Wall -W -Wpointer-arith -Wcast-align \
+  -Wconversion -Waggregate-return -Winline -Woverloaded-virtual -Wsynth \
+  -Wshadow -Wcast-qual 
+
+#      optimizacion maxima
+CFLAGS= -O3
+
+#      sin nada
+#CFLAGS=
+
+LINK=$(CPP)
+
+#uso de la libreria matematica
+#LDFLAGS= -lm -lcurses
+LDFLAGS= -lm
+
+#uso de lib. mat. + curses
+#LDFLAGS=-lm -lmenu -lpanel -lncurses  -lbsd 
+
+#flags para localizar los include
+CFLAGSL=-I. -I/usr/local/gcc-2.8.1/include
+
+#flags para localizar las librerias
+LDFLAGSL= -L/usr/local/gcc-2.8.1/solaris-2.7/lib
+
+LINK_OBJ= HNN-1bis.o data.o entsal.o misc.o tabla.o neurona.o funneu.o breeder.o random.o partition.o
+
+.cc.o:
+	$(CPP) -c $(CFLAGS) $(CFLAGSL) $<
+
+.c.o:
+	$(CPP) -c $(CFLAGS) $(CFLAGSL) $<
+
+
+HNN-1bis-linux.exe: $(LINK_OBJ)
+	$(LINK) $(CFLAGS) $(LDFLAGSL) $(LDFLAGS) $(LINK_OBJ) -o HNN-1bis-linux.exe 
+
+SOURCE= HNN-1bis.cc
+DEP_A=\
+      config.h\
+      defs.h\
+      data.h\
+      funneu.h\
+      neurona.h
+
+HNN-1bis.o: $(SOURCE) $(DEP_A)
+
+SOURCE= misc.cc
+DEP_A=\
+      misc.h\
+      config.h
+
+misc.o: $(SOURCE) $(DEP_A)
+
+SOURCE= data.cc
+DEP_A=\
+      config.h\
+      data.h\
+      defs.h\
+      tabla.h\
+      entsal.h\
+      misc.h
+
+data.o: $(SOURCE) $(DEP_A)
+
+SOURCE= entsal.cc
+DEP_A=\
+      config.h\
+      entsal.h
+
+entsal.o: $(SOURCE) $(DEP_A)
+
+SOURCE= tabla.cc
+DEP_A=\
+      tabla.h\
+      defs.h
+
+tabla.o: $(SOURCE) $(DEP_A)
+
+SOURCE= neurona.cc
+DEP_A=\
+      neurona.h\
+      defs.h
+
+neurona.o: $(SOURCE) $(DEP_A)
+
+SOURCE= funneu.cc
+DEP_A=\
+      funneu.h\
+      defs.h
+
+funneu.o: $(SOURCE) $(DEP_A)
+
+SOURCE= breeder.cc
+DEP_A=\
+      breeder.h\
+      defs.h\
+      random.h\
+      config.h\
+      FFs.cc
+
+breeder.o: $(SOURCE) $(DEP_A)
+
+SOURCE= random.cc
+DEP_A=\
+      random.h\
+      defs.h
+
+random.o: $(SOURCE) $(DEP_A)

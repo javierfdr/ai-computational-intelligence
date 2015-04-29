@@ -1,0 +1,275 @@
+#!/tools/bin/perl
+#
+# Problem: Annealing
+# Encodes raw data file into a training file for similarity networks
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split(',');
+
+  $v = $F[0];  #family NOMINAL
+  printf ("%s ", 
+	  $v eq "GB"  ? "1" :
+	  $v eq "GK"  ? "2" :
+	  $v eq "GS"  ? "3" :
+	  $v eq "TN"  ? "4" :
+	  $v eq "ZA"  ? "5" :
+	  $v eq "ZF"  ? "6" :
+	  $v eq "ZH"  ? "7" :
+	  $v eq "ZM"  ? "8" :
+	  $v eq "ZS"  ? "9" :
+	  $v eq "-"   ? "10" : "##########");
+
+  $v = $F[1];  #product-type NOMINAL
+#  printf ("%s ", 
+#	  $v eq "C" ? "1" :
+#	  $v eq "H" ? "2" :
+#	  $v eq "G" ? "3" :
+#	  "##########");
+
+  $v = $F[2];  #steel NOMINAL
+  printf ("%s ", 
+	  $v eq "R"  ? "1":
+	  $v eq "A"  ? "2":
+	  $v eq "U"  ? "3":
+	  $v eq "K"  ? "4":
+	  $v eq "M"  ? "5":
+	  $v eq "S"  ? "6":
+	  $v eq "W"  ? "7":
+	  $v eq "V"  ? "8":
+	  $v eq "-"  ? "9":
+	  "##########");
+
+  $v = $F[3];  #carbon CONTINUOUS
+  if ($v eq "-") { printf ("##########"); }
+  else { printf ("%7.3f ", $v); }
+ 
+  $v = $F[4];  #hardness CONTINUOUS
+  if ($v eq "-") { printf ("##########"); }
+  else { printf ("%7.3f ", $v); }
+
+  $v = $F[5];  #temper_rolling NOMINAL
+  printf ("%s ", 
+	  $v eq "T" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[6];  #condition NOMINAL
+  printf ("%s ", 
+	  $v eq "S" ? "1":
+	  $v eq "A" ? "2":
+	  $v eq "X" ? "3":
+	  $v eq "-" ? "4":
+	  "##########");
+
+  $v = $F[7];  #formability INTEGER
+  printf ("%s ", 
+	  $v eq "1" ? "1":
+	  $v eq "2" ? "2":
+	  $v eq "3" ? "3":
+	  $v eq "4" ? "4":
+	  $v eq "5" ? "5":
+	  $v eq "-" ? "6":
+	  "##########");
+ 
+  $v = $F[8];  #strength CONTINUOUS
+  if ($v eq "-") { printf ("##########"); }
+  else { printf ("%7.3f ", $v); }
+
+  $v = $F[9];  #non-ageing NOMINAL
+  printf ("%s ", 
+	  $v eq "N" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[10];  #surface-finish NOMINAL
+  printf ("%s ", 
+	  $v eq "P" ? "1" :
+	  $v eq "M" ? "2" :
+	  $v eq "-" ? "3" :
+	  "##########");
+
+  $v = $F[11];  #surface-quality NOMINAL
+  printf ("%s ", 
+	  $v eq "D" ? "1":
+	  $v eq "E" ? "2":
+	  $v eq "F" ? "3":
+	  $v eq "G" ? "4":
+	  $v eq "-" ? "5":
+	  "##########");
+
+  $v = $F[12];  #enamelability INTEGER
+  printf ("%s ", 
+	  $v eq "1" ? "1":
+	  $v eq "2" ? "2":
+	  $v eq "3" ? "3":
+	  $v eq "4" ? "4":
+	  $v eq "5" ? "5":
+	  $v eq "-" ? "6":
+	  "##########");
+
+  $v = $F[13];  #bc NOMINAL
+  printf ("%s ", 
+	  $v eq "Y" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[14];  #bf NOMINAL
+  printf ("%s ", 
+	  $v eq "Y" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[15];  #bt NOMINAL
+  printf ("%s ", 
+	  $v eq "Y" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[16];  #bw/me NOMINAL
+  printf ("%s ", 
+	  $v eq "B" ? "1" :
+	  $v eq "M" ? "2" :
+	  $v eq "-" ? "3" :
+	  "##########");
+
+  $v = $F[17];  #bl NOMINAL
+  printf ("%s ", 
+	  $v eq "Y" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[18];  #m NOMINAL: ELIMINADA todos son '-')
+#  printf ("%s ", 
+#	  $v eq "Y" ? "1" :
+#	  $v eq "-" ? "2" :
+#	  "##########");
+
+  $v = $F[19];  #chrom NOMINAL
+  printf ("%s ", 
+	  $v eq "C" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[20];  #phos NOMINAL
+  printf ("%s ", 
+	  $v eq "P" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[21];  #cbond NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y" ? "1" :
+#	  $v eq "-" ? "2" :
+#	  "##########");
+#
+  $v = $F[22];  #marvi NOMINAL (constant)
+#  printf ("%s ", 
+#	  $v eq "Y" ? "1" :
+#	  $v eq "-" ? "2" :
+#	  "##########");
+
+  $v = $F[23];  #exptl NOMINAL
+  printf ("%s ", 
+	  $v eq "Y" ? "1" :
+	  $v eq "-" ? "2" :
+	  "##########");
+
+  $v = $F[24];  #ferro NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y" ? "1" :
+#	  $v eq "-" ? "2" :
+#	  "##########");
+#
+  $v = $F[25];  #corr NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y"  ? "1" :
+#	  $v eq "-"  ? "2" :
+#	  "##########");
+
+  $v = $F[26];  #blue/bright/varn/clean NOMINAL
+  printf ("%s ", 
+	  $v eq "B"  ? "1":
+	  $v eq "R"  ? "2":
+	  $v eq "V"  ? "3":
+	  $v eq "C"  ? "4":
+	  $v eq "-"  ? "5":
+	  "##########");
+
+  $v = $F[27];  #lustre NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y"  ? "1" :
+#	  $v eq "-"  ? "2" :
+#	  "##########");
+
+  $v = $F[28];  #jurofm NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y"  ? "1" :
+#	  $v eq "-"  ? "2" :
+#	  "##########");
+#
+  $v = $F[29];  #s NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y"  ? "1" :
+#	  $v eq "-"  ? "2" :
+#	  "##########");
+#
+  $v = $F[30];  #p NOMINAL
+#  printf ("%s ", 
+#	  $v eq "Y"  ? "1" :
+#	  $v eq "-"  ? "2" :
+#	  "##########");
+
+  $v = $F[31];  #shape NOMINAL
+  printf ("%s ", 
+	  $v eq "COIL"  ? "1" :
+	  $v eq "SHEET"  ? "2" :
+	  "##########");
+
+  $v = $F[32];  #thick CONTINUOUS
+  if ($v eq "-") {printf ("##########");}
+  else { printf ("%7.3f ", $v); }
+
+  $v = $F[33];  #width CONTINUOUS
+  if ($v eq "-") {printf ("##########");}
+  else { printf ("%7.3f ", $v); }
+
+  $v = $F[34];  #len CONTINUOUS
+  if ($v eq "-") {printf ("##########");}
+  else { printf ("%7.3f ", $v); }
+
+  $v = $F[35];  #oil NOMINAL
+  printf ("%s ", 
+	  $v eq "Y"  ? "1" :
+	  $v eq "N"  ? "2" :
+	  $v eq "-"  ? "3" :
+	  "##########");
+
+  $v = $F[36];  #bore NOMINAL
+  printf ("%s ", 
+	  $v eq "0000"  ? "1" :
+	  $v eq "0500"  ? "2" :
+	  $v eq "0600"  ? "3" :
+	  $v eq "0760"  ? "4" :
+	  "##########");
+
+  $v = $F[37];  #packing INTEGER
+  printf ("%s ", 
+	  $v eq "1"  ? "1" :
+	  $v eq "2"  ? "2" :
+	  $v eq "3"  ? "3" :
+	  $v eq "-"  ? "4" :
+	  "##########");
+
+  $v = $F[38];  #OUTPUT
+  printf ("%s\n", 
+	  $v eq "1\n"  ? "1 0 0 0 0 0":
+	  $v eq "2\n"  ? "0 1 0 0 0 0":
+	  $v eq "3\n"  ? "0 0 1 0 0 0":
+	  $v eq "4\n"  ? "0 0 0 1 0 0":
+	  $v eq "5\n"  ? "0 0 0 0 1 0":
+	  $v eq "U\n"  ? "0 0 0 0 0 1": 
+	  "##########");
+
+}

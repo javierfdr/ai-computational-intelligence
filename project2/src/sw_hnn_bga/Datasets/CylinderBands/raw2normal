@@ -1,0 +1,125 @@
+#!/tools/bin/perl
+#
+# Problem: Annealing
+# Encodes raw data file into a training file for normal networks
+#
+# usage: raw2cod inputfile >outputfile
+
+while (<>) {
+  @F = split;
+
+  $v = $F[1];  #timestamp: ELIMINADO
+ 
+  $v = $F[2];  #cylinder number: ELIMINADO
+
+  $v = $F[3];  #customer NOMINAL
+  printf ("%s ", 
+	  $v eq "std" ? "1 0" :
+	  $v eq "turbo"    ? "0 1" :
+	  "##########");
+
+  $v = $F[6];  #num-of-doors NOMINAL
+  printf ("%s ", 
+	  $v eq "four" ? "1 0" :
+	  $v eq "two"    ? "0 1" :
+	  "##########");
+
+  $v = $F[7];  #body-style
+  printf ("%s ", 
+	  $v eq "hardtop" ? "1 0 0 0 0":
+	  $v eq "wagon" ? "0 1 0 0 0":
+	  $v eq "sedan" ? "0 0 1 0 0":
+	  $v eq "hatchback" ? "0 0 0 1 0":
+	  $v eq "convertible" ? "0 0 0 0 1":
+	  "##########");
+
+  $v = $F[8];  #drive-wheels NOMINAL
+  printf ("%s ", 
+	  $v eq "4wd" ? "1 0 0":
+	  $v eq "fwd" ? "0 1 0":
+	  $v eq "rwd" ? "0 0 1":
+	  "##########");
+ 
+  $v = $F[9];  #engine-location NOMINAL
+  printf ("%s ", 
+	  $v eq "front" ? "1 0" :
+	  $v eq "rear"    ? "0 1" :
+	  "##########");
+
+  $v = $F[10];  #wheel-base CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[11];  #length CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[12];  #width CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[13];  #height CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[14];  #curb-weight CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[15];  #engine-type NOMINAL
+  printf ("%s ", 
+	  $v eq "dohc"  ? "1 0 0 0 0 0 0" :
+	  $v eq "dohcv" ? "0 1 0 0 0 0 0" :
+	  $v eq "l"     ? "0 0 1 0 0 0 0" :
+	  $v eq "ohc"   ? "0 0 0 1 0 0 0" :
+	  $v eq "ohcf"  ? "0 0 0 0 1 0 0" :
+	  $v eq "ohcv"  ? "0 0 0 0 0 1 0" :
+	  $v eq "rotor" ? "0 0 0 0 0 0 1" :
+	  "##########");
+
+ $v = $F[16];  #num-of-cylinders INTEGER
+  printf ("%s ", 
+	  $v eq "eight" ? "8" :
+	  $v eq "five"  ? "5" :
+	  $v eq "four"  ? "4" :
+	  $v eq "six"   ? "6" :
+	  $v eq "three" ? "3" :
+	  $v eq "twelve"? "12" :
+	  $v eq "two"   ? "2" :
+	  "##########");
+
+  $v = $F[17];  #engine-size CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[18];  #fuel-system NOMINAL
+  printf ("%s ", 
+	  $v eq "1bbl" ? "1 0 0 0 0 0 0 0" :
+	  $v eq "2bbl" ? "0 1 0 0 0 0 0 0" :
+	  $v eq "4bbl" ? "0 0 1 0 0 0 0 0" :
+	  $v eq "idi"  ? "0 0 0 1 0 0 0 0" :
+	  $v eq "mfi"  ? "0 0 0 0 1 0 0 0" :
+	  $v eq "mpfi" ? "0 0 0 0 0 1 0 0" :
+	  $v eq "spdi" ? "0 0 0 0 0 0 1 0" :
+	  $v eq "spfi" ? "0 0 0 0 0 0 0 1" :
+	  "##########");
+
+  $v = $F[19];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[20];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[21];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[22];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[23];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[24];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[25];  # CONTINUOUS
+  printf ("%7.3f ", $v);
+
+  $v = $F[39];  #OUTPUT
+  printf ("%7.3f ", $v);
+
+}
