@@ -1,0 +1,8 @@
+ATCI - Second practical project
+Thursday, April 9, 2015
+
+The second ATCI project, to be developed again in groups of two people, will consist of comparing different types (and sizes) of neural networks (and optionally other models as well) using both the software for HNNs and the software for "Shallow networks", applied to some small number (between 2 and 4) of the datasets included with the software. The first software allows training HNNs, MLPs and RBF nets with the evolutionary BGA algorithm. The second one allows training MLPs and RBF nets using derivative-based methods (for instance, the Levenberg-Marquardt algorithm) in addition to many other models such as ELM and k-NN.
+
+The same experimental procedure (either repeated hold-out or cross-validation) should be applied to the different networks and models compared. You are free to study the effect of some of the parameters of the models and the training algorithms, trying to obtain the best results possible for each of the tested datasets. A short document with a summary of the experiments performed, obtained results and some discussion of them should be delivered by May 4th, 2015. You should send the document to alquezar@cs.upc.edu.
+
+René
