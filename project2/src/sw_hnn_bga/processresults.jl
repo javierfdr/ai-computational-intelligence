@@ -56,7 +56,7 @@ end
 #datasets = ["Audiology","BostonHousing","CreditCard","Servo"]
 datasets = ["Audiology","CreditCard","HorseColic","Servo"]
 #resultpaths = ["Resultats","Resultats2","Resultats3"]
-resultpaths = ["ResultatsXXX","ResultatsXXY"]
+resultpaths = ["Exploit","Explore"]
 
 ntype = ["h","n","r"]
 ntypelong = ["hnn","mlp","rbf"]
