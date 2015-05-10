@@ -1,0 +1,45 @@
+Configuración leída OK
+Loading ./Datasets/Servo/Servo_h.in ... OK
+Datos leídos OK
+Ndades: 167
+NInputs: 4
+NOutputs: 1
+
+LMode: REGRESS
+Missing: 0 de 668 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.      NOMINAL     0    0.000    5.000    1.000    -      -
+   2.      NOMINAL     0    0.000    5.000    1.000    -      -
+   3.      INTEGER     0    0.000    4.000    1.000    -      -
+   4.      INTEGER     0    0.000    5.000    1.000    -      -
+Red leída OK
+Creando BGA de 120 individuos
+Problema: ErrorRed
+No. variables: 73
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.000481476 (Mean) 0.00355347 (Variance) 7.89166e-06
+NMSE (Best) 9.12708e-10 (Mean) 6.73611e-09 (Variance) 2.83585e-17
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.000886466 (Mean) 0.00993154 (Variance) 0.000128155
+NMSE (Best) 1.68043e-09 (Mean) 1.88267e-08 (Variance) 4.60522e-16
+
+***********
+TEST
+***********
+
+MSE (Best) 0.000980491 (Mean) 0.0101379 (Variance) 0.000190661
+NMSE (Best) 1.85866e-09 (Mean) 1.92179e-08 (Variance) 6.85137e-16
+NMSE at min VA 4.6762e-09 (run 6)
+
+Mean NMSE in TE is 1.92179e-08

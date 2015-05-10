@@ -1,0 +1,113 @@
+Configuración leída OK
+Loading ./Datasets/Audiology/Audiology_h.in ... OK
+Datos leídos OK
+Ndades: 226
+NInputs: 69
+NOutputs: 4
+
+LMode: CLASSIF  150 (66.372%)  25 (11.062%)  22 (9.735%)  29 (12.832%)
+Missing: 367 de 15594 (2.353%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.      NOMINAL     0    0.000    2.000    1.000    -      -
+   2.      ORDINAL     0    0.000    5.000    1.000    -      -
+   3.      NOMINAL     0    0.000    2.000    1.000    -      -
+   4.      ORDINAL     4    0.018    3.000    1.000    -      -
+   5.      ORDINAL     3    0.013    3.000    1.000    -      -
+   6.      ORDINAL   121    0.535    3.000    1.000    -      -
+   7.      NOMINAL     0    0.000    2.000    1.000    -      -
+   8.      NOMINAL   222    0.982    2.000    1.000    -      -
+   9.      NOMINAL     0    0.000    2.000    1.000    -      -
+  10.      NOMINAL     0    0.000    2.000    1.000    -      -
+  11.      NOMINAL     0    0.000    2.000    1.000    -      -
+  12.      NOMINAL     0    0.000    2.000    1.000    -      -
+  13.      NOMINAL     0    0.000    2.000    1.000    -      -
+  14.      NOMINAL     0    0.000    2.000    1.000    -      -
+  15.      NOMINAL     0    0.000    2.000    1.000    -      -
+  16.      NOMINAL     0    0.000    2.000    1.000    -      -
+  17.      NOMINAL     0    0.000    2.000    1.000    -      -
+  18.      NOMINAL     0    0.000    2.000    1.000    -      -
+  19.      NOMINAL     0    0.000    2.000    1.000    -      -
+  20.      NOMINAL     0    0.000    2.000    1.000    -      -
+  21.      NOMINAL     0    0.000    2.000    1.000    -      -
+  22.      NOMINAL     0    0.000    2.000    1.000    -      -
+  23.      NOMINAL     0    0.000    2.000    1.000    -      -
+  24.      NOMINAL     0    0.000    2.000    1.000    -      -
+  25.      NOMINAL     0    0.000    2.000    1.000    -      -
+  26.      NOMINAL     0    0.000    2.000    1.000    -      -
+  27.      NOMINAL     0    0.000    2.000    1.000    -      -
+  28.      NOMINAL     0    0.000    2.000    1.000    -      -
+  29.      NOMINAL     0    0.000    2.000    1.000    -      -
+  30.      NOMINAL     0    0.000    2.000    1.000    -      -
+  31.      NOMINAL     0    0.000    2.000    1.000    -      -
+  32.      NOMINAL     0    0.000    2.000    1.000    -      -
+  33.      NOMINAL     0    0.000    2.000    1.000    -      -
+  34.      NOMINAL     0    0.000    2.000    1.000    -      -
+  35.      NOMINAL     0    0.000    2.000    1.000    -      -
+  36.      NOMINAL     0    0.000    2.000    1.000    -      -
+  37.      NOMINAL     0    0.000    2.000    1.000    -      -
+  38.      NOMINAL     0    0.000    2.000    1.000    -      -
+  39.      NOMINAL     0    0.000    2.000    1.000    -      -
+  40.      NOMINAL     0    0.000    2.000    1.000    -      -
+  41.      NOMINAL     0    0.000    2.000    1.000    -      -
+  42.      NOMINAL     0    0.000    2.000    1.000    -      -
+  43.      NOMINAL     0    0.000    2.000    1.000    -      -
+  44.      NOMINAL     0    0.000    2.000    1.000    -      -
+  45.      NOMINAL     0    0.000    2.000    1.000    -      -
+  46.      NOMINAL     0    0.000    2.000    1.000    -      -
+  47.      NOMINAL     0    0.000    2.000    1.000    -      -
+  48.      NOMINAL     0    0.000    2.000    1.000    -      -
+  49.      NOMINAL     0    0.000    2.000    1.000    -      -
+  50.      NOMINAL     0    0.000    2.000    1.000    -      -
+  51.      NOMINAL     0    0.000    2.000    1.000    -      -
+  52.      NOMINAL     0    0.000    2.000    1.000    -      -
+  53.      NOMINAL     0    0.000    2.000    1.000    -      -
+  54.      NOMINAL     0    0.000    2.000    1.000    -      -
+  55.      NOMINAL     0    0.000    2.000    1.000    -      -
+  56.      NOMINAL     0    0.000    2.000    1.000    -      -
+  57.      NOMINAL     0    0.000    2.000    1.000    -      -
+  58.      NOMINAL     0    0.000    2.000    1.000    -      -
+  59.      ORDINAL     5    0.022    3.000    1.000    -      -
+  60.      ORDINAL     2    0.009    3.000    1.000    -      -
+  61.      NOMINAL     0    0.000    2.000    1.000    -      -
+  62.      NOMINAL     0    0.000    2.000    1.000    -      -
+  63.      NOMINAL     0    0.000    2.000    1.000    -      -
+  64.      ORDINAL    10    0.044    5.000    1.000    -      -
+  65.      NOMINAL     0    0.000    2.000    1.000    -      -
+  66.      NOMINAL     0    0.000    5.000    1.000    -      -
+  67.      NOMINAL     0    0.000    2.000    1.000    -      -
+  68.      NOMINAL     0    0.000    2.000    1.000    -      -
+  69.      NOMINAL     0    0.000    2.000    1.000    -      -
+Red leída OK
+Creando BGA de 180 individuos
+Problema: ErrorRed
+No. variables: 744
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.162295 (Mean) 0.172969 (Variance) 0.000108324
+NMSE (Best) 7.2131e-06 (Mean) 7.6875e-06 (Variance) 2.13974e-13
+---> Mean Accuracy 73.982% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.153617 (Mean) 0.164844 (Variance) 8.74806e-05
+NMSE (Best) 6.82744e-06 (Mean) 7.3264e-06 (Variance) 1.72801e-13
+---> Mean Accuracy 78.214% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.267497 (Mean) 0.282124 (Variance) 7.99572e-05
+NMSE (Best) 1.18887e-05 (Mean) 1.25389e-05 (Variance) 1.5794e-13
+---> Mean Accuracy 59.298% <---
+NMSE at min VA 1.24109e-05 (57.895%) (run 5)
+
+Mean Accuracy in TE is 59.2982

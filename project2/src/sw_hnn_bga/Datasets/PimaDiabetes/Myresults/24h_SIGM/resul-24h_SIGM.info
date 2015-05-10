@@ -1,0 +1,52 @@
+Configuración leída OK
+Loading ./Datasets/PimaDiabetes/PimaDiabetes_h.in ... OK
+Datos leídos OK
+Ndades: 768
+NInputs: 8
+NOutputs: 2
+
+LMode: CLASSIF  268 (34.896%)  500 (65.104%)
+Missing: 652 de 6144 (10.612%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.      INTEGER     0    0.000   18.000    1.000    -      -
+   2.         REAL     5    0.007    1.000    0.000   0.501    0.197
+   3.         REAL    35    0.046    1.000    0.000   0.494    0.126
+   4.         REAL   227    0.296    1.000    0.000   0.241    0.114
+   5.         REAL   374    0.487    1.000    0.000   0.170    0.143
+   6.         REAL    11    0.014    1.000    0.000   0.292    0.142
+   7.         REAL     0    0.000    1.000    0.000   0.168    0.141
+   8.      INTEGER     0    0.000   61.000    1.000    -      -
+Red leída OK
+Creando BGA de 60 individuos
+Problema: ErrorRed
+No. variables: 266
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.232136 (Mean) 0.253092 (Variance) 0.000186238
+NMSE (Best) 3.23201e-06 (Mean) 3.52378e-06 (Variance) 3.61019e-14
+---> Mean Accuracy 75.339% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.259283 (Mean) 0.28207 (Variance) 0.000406814
+NMSE (Best) 3.60998e-06 (Mean) 3.92725e-06 (Variance) 7.886e-14
+---> Mean Accuracy 70.677% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.22783 (Mean) 0.270419 (Variance) 0.000478
+NMSE (Best) 3.17206e-06 (Mean) 3.76502e-06 (Variance) 9.26592e-14
+---> Mean Accuracy 72.917% <---
+NMSE at min VA 3.17206e-06 (79.167%) (run 3)
+
+Mean Accuracy in TE is 72.9167

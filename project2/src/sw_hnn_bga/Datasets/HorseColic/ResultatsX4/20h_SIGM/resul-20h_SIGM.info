@@ -1,0 +1,64 @@
+Configuración leída OK
+Loading ./Datasets/HorseColic/HorseColic_h.in ... OK
+Datos leídos OK
+Ndades: 364
+NInputs: 20
+NOutputs: 3
+
+LMode: CLASSIF  224 (61.538%)  88 (24.176%)  52 (14.286%)
+Missing: 1901 de 7280 (26.113%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.       BINARY     0    0.000    2.000    1.000    -      -
+   2.         REAL    68    0.187    1.000    0.000   0.507    0.132
+   3.      INTEGER    25    0.069  155.000    1.000    -      -
+   4.      INTEGER    70    0.192   89.000    1.000    -      -
+   5.      ORDINAL    64    0.176    4.000    1.000    -      -
+   6.      ORDINAL    83    0.228    4.000    1.000    -      -
+   7.      NOMINAL    48    0.132    6.000    1.000    -      -
+   8.       BINARY    38    0.104    2.000    1.000    -      -
+   9.      NOMINAL    63    0.173    5.000    1.000    -      -
+  10.      ORDINAL    51    0.140    4.000    1.000    -      -
+  11.      ORDINAL    64    0.176    4.000    1.000    -      -
+  12.      ORDINAL   130    0.357    3.000    1.000    -      -
+  13.      ORDINAL   132    0.363    3.000    1.000    -      -
+  14.         REAL   295    0.810    1.000    0.000   0.528    0.267
+  15.      NOMINAL   126    0.346    4.000    1.000    -      -
+  16.      NOMINAL   143    0.393    5.000    1.000    -      -
+  17.         REAL    36    0.099    1.000    0.000   0.587    0.154
+  18.         REAL    42    0.115    1.000    0.000   0.250    0.323
+  19.      NOMINAL   191    0.525    3.000    1.000    -      -
+  20.         REAL   232    0.637    1.000    0.000   0.286    0.193
+Red leída OK
+Creando BGA de 60 individuos
+Problema: ErrorRed
+No. variables: 483
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.128362 (Mean) 0.144618 (Variance) 0.000107564
+NMSE (Best) 2.55824e-06 (Mean) 2.88222e-06 (Variance) 4.27243e-14
+---> Mean Accuracy 82.582% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.203911 (Mean) 0.212441 (Variance) 5.4931e-05
+NMSE (Best) 4.06392e-06 (Mean) 4.23391e-06 (Variance) 2.18185e-14
+---> Mean Accuracy 75.165% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.24788 (Mean) 0.268806 (Variance) 0.000429065
+NMSE (Best) 4.94021e-06 (Mean) 5.35726e-06 (Variance) 1.70424e-13
+---> Mean Accuracy 65.165% <---
+NMSE at min VA 5.13625e-06 (64.835%) (run 7)
+
+Mean Accuracy in TE is 65.1648

@@ -1,0 +1,59 @@
+Configuración leída OK
+Loading ./Datasets/CreditCard/CreditCard_h.in ... OK
+Datos leídos OK
+Ndades: 690
+NInputs: 15
+NOutputs: 2
+
+LMode: CLASSIF  307 (44.493%)  383 (55.507%)
+Missing: 67 de 10350 (0.647%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.      NOMINAL    12    0.017    2.000    1.000    -      -
+   2.         REAL    12    0.017    1.000    0.000   0.268    0.180
+   3.         REAL     0    0.000    1.000    0.000   0.170    0.178
+   4.      NOMINAL     6    0.009    3.000    1.000    -      -
+   5.      NOMINAL     6    0.009    3.000    1.000    -      -
+   6.      NOMINAL     9    0.013   14.000    1.000    -      -
+   7.      NOMINAL     9    0.013    9.000    1.000    -      -
+   8.         REAL     0    0.000    1.000    0.000   0.078    0.117
+   9.       BINARY     0    0.000    2.000    1.000    -      -
+  10.       BINARY     0    0.000    2.000    1.000    -      -
+  11.         REAL     0    0.000    1.000    0.000   0.036    0.073
+  12.       BINARY     0    0.000    2.000    1.000    -      -
+  13.      NOMINAL     0    0.000    3.000    1.000    -      -
+  14.         REAL    13    0.019    1.000    0.000   0.092    0.087
+  15.         REAL     0    0.000    1.000    0.000   0.258    0.277
+Red leída OK
+Creando BGA de 120 individuos
+Problema: ErrorRed
+No. variables: 218
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.206075 (Mean) 0.230572 (Variance) 0.000201313
+NMSE (Best) 2.18649e-06 (Mean) 2.44642e-06 (Variance) 2.26631e-14
+---> Mean Accuracy 79.652% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.224298 (Mean) 0.241871 (Variance) 0.000156249
+NMSE (Best) 2.37984e-06 (Mean) 2.5663e-06 (Variance) 1.75899e-14
+---> Mean Accuracy 79.244% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.236093 (Mean) 0.258099 (Variance) 0.000123391
+NMSE (Best) 2.505e-06 (Mean) 2.73848e-06 (Variance) 1.38909e-14
+---> Mean Accuracy 77.399% <---
+NMSE at min VA 2.69701e-06 (75.145%) (run 1)
+
+Mean Accuracy in TE is 77.3988

@@ -16,7 +16,7 @@ while ( $hiddens <= $3 )
 
   foreach neu (n h r)
 
-    ./train.sh $1 $4 $5 60 5 1000 10 $neu $hiddens
+    ./train.sh $1 $4 $5 600 10 20000 10 $neu `expr $hiddens \* 2`
   end
 
   @ hiddens ++

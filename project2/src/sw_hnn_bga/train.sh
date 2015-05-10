@@ -17,8 +17,8 @@
 # p_data = path where the data is read from (.in, .cfg files)
 # p_nets = path where the networks are read from (.net files)
 
-set p_data = $HOME/WORK-UPC/Software/HNN-1-BGA/NUEVOARRANQUE/Datasets
-set p_nets = $HOME/WORK-UPC/Software/HNN-1-BGA/NUEVOARRANQUE/newnets
+set p_data = ./Datasets
+set p_nets = ./newnets
 
 
 # if the neuron type is 'n' or 'r', we read the '_n.in' and '_n.cfg' files
@@ -45,5 +45,5 @@ foreach data ($1)
    set file_out = $p_out"/resul-"$xarxa".info"
    mkdir -p $p_out
 
-   ./HNN-1bis-linux.exe $file_cfg $file_in $file_net $p_out $4 $5 $6 $7 > $file_out
+   nohup ./HNN-1bis-linux.exe $file_cfg $file_in $file_net $p_out $4 $5 $6 $7 > $file_out &
 end 

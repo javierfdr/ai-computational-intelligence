@@ -1,0 +1,54 @@
+Configuración leída OK
+Loading ./Datasets/BostonHousing/BostonHousing_h.in ... OK
+Datos leídos OK
+Ndades: 506
+NInputs: 13
+NOutputs: 1
+
+LMode: REGRESS
+Missing: 0 de 6578 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.         REAL     0    0.000    1.000    0.000   0.041    0.097
+   2.         REAL     0    0.000    1.000    0.000   0.114    0.233
+   3.         REAL     0    0.000    1.000    0.000   0.391    0.251
+   4.       BINARY     0    0.000    2.000    1.000    -      -
+   5.         REAL     0    0.000    1.000    0.000   0.349    0.238
+   6.         REAL     0    0.000    1.000    0.000   0.522    0.135
+   7.         REAL     0    0.000    1.000    0.000   0.676    0.290
+   8.         REAL     0    0.000    1.000    0.000   0.242    0.191
+   9.      INTEGER     0    0.000   24.000    1.000    -      -
+  10.         REAL     0    0.000    1.000    0.000   0.422    0.322
+  11.         REAL     0    0.000    1.000    0.000   0.623    0.230
+  12.         REAL     0    0.000    1.000    0.000   0.899    0.230
+  13.         REAL     0    0.000    1.000    0.000   0.301    0.197
+Red leída OK
+Creando BGA de 120 individuos
+Problema: ErrorRed
+No. variables: 241
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.000679303 (Mean) 0.0030687 (Variance) 9.69191e-06
+NMSE (Best) 1.35585e-14 (Mean) 6.12496e-14 (Variance) 3.86107e-27
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.000734042 (Mean) 0.00340134 (Variance) 1.3881e-05
+NMSE (Best) 1.46511e-14 (Mean) 6.7889e-14 (Variance) 5.52992e-27
+
+***********
+TEST
+***********
+
+MSE (Best) 0.000530309 (Mean) 0.00276143 (Variance) 6.38055e-06
+NMSE (Best) 1.05847e-14 (Mean) 5.51167e-14 (Variance) 2.54189e-27
+NMSE at min VA 1.5671e-14 (run 9)
+
+Mean NMSE in TE is 5.51167e-14

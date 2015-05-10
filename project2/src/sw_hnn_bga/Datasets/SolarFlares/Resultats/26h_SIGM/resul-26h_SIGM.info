@@ -1,0 +1,53 @@
+Configuración leída OK
+Loading ./Datasets/SolarFlares/SolarFlares_h.in ... OK
+Datos leídos OK
+Ndades: 1066
+NInputs: 9
+NOutputs: 2
+
+LMode: CLASSIF  201 (18.856%)  865 (81.144%)
+Missing: 0 de 9594 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.      NOMINAL     0    0.000    7.000    2.000    -      -
+   2.      NOMINAL     0    0.000    6.000    1.000    -      -
+   3.      NOMINAL     0    0.000    4.000    1.000    -      -
+   4.      NOMINAL     0    0.000    2.000    1.000    -      -
+   5.      ORDINAL     0    0.000    3.000    1.000    -      -
+   6.      ORDINAL     0    0.000    3.000    1.000    -      -
+   7.       BINARY     0    0.000    2.000    1.000    -      -
+   8.       BINARY     0    0.000    2.000    1.000    -      -
+   9.      ORDINAL     0    0.000    2.000    1.000    -      -
+Red leída OK
+Creando BGA de 60 individuos
+Problema: ErrorRed
+No. variables: 314
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.199165 (Mean) 0.207932 (Variance) 7.95992e-05
+NMSE (Best) 4.9297e-06 (Mean) 5.14672e-06 (Variance) 4.87668e-14
+---> Mean Accuracy 81.839% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.199387 (Mean) 0.210997 (Variance) 8.57339e-05
+NMSE (Best) 4.93521e-06 (Mean) 5.22258e-06 (Variance) 5.25253e-14
+---> Mean Accuracy 82.744% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.222473 (Mean) 0.238885 (Variance) 0.000187818
+NMSE (Best) 5.50662e-06 (Mean) 5.91285e-06 (Variance) 1.15068e-13
+---> Mean Accuracy 79.288% <---
+NMSE at min VA 5.59916e-06 (81.648%) (run 4)
+
+Mean Accuracy in TE is 79.2884

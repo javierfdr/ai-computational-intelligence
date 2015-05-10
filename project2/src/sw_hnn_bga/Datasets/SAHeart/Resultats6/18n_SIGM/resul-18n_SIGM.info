@@ -1,0 +1,53 @@
+Configuración leída OK
+Loading ./Datasets/SAHeart/SAHeart_n.in ... OK
+Datos leídos OK
+Ndades: 462
+NInputs: 9
+NOutputs: 2
+
+LMode: CLASSIF  160 (34.632%)  302 (65.368%)
+Missing: 0 de 4158 (0.000%)
+
+Variable     Type    #Miss  Pmiss     Max      Min    Mean    Stddev
+   1.         REAL     0    0.000    3.887   -1.821   0.000    1.000
+   2.         REAL     0    0.000    6.001   -0.792   0.000    1.000
+   3.         REAL     0    0.000    5.114   -1.816   0.000    1.000
+   4.         REAL     0    0.000    2.196   -2.399   0.000    1.000
+   5.         REAL     0    0.000    0.842   -1.185   0.000    1.000
+   6.         REAL     0    0.000    2.536   -4.085   0.000    1.000
+   7.         REAL     0    0.000    4.874   -2.692   0.000    1.000
+   8.         REAL     0    0.000    5.316   -0.696   0.000    1.000
+   9.         REAL     0    0.000    1.450   -1.904   0.000    1.000
+Red leída OK
+Creando BGA de 200 individuos
+Problema: ErrorRed
+No. variables: 218
+
+Solving problem ... 'ErrorRed' (Error cuadrático)
+
+***********
+TRAINING
+***********
+
+MSE (Best) 0.258302 (Mean) 0.316876 (Variance) 0.00352821
+NMSE (Best) 3.33859e-15 (Mean) 4.09567e-15 (Variance) 5.89418e-31
+---> Mean Accuracy 75.498% <---
+
+***********
+VALIDATION
+***********
+
+MSE (Best) 0.367774 (Mean) 0.50949 (Variance) 0.0161946
+NMSE (Best) 4.75352e-15 (Mean) 6.58522e-15 (Variance) 2.70545e-30
+---> Mean Accuracy 66.000% <---
+
+***********
+TEST
+***********
+
+MSE (Best) 0.419575 (Mean) 0.590354 (Variance) 0.0190188
+NMSE (Best) 5.42306e-15 (Mean) 7.6304e-15 (Variance) 3.17725e-30
+---> Mean Accuracy 64.741% <---
+NMSE at min VA 7.52448e-15 (62.069%) (run 10)
+
+Mean Accuracy in TE is 64.7414
